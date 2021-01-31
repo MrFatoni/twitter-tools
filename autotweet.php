@@ -37,6 +37,15 @@ if ($connection->getLastHttpCode() == 200) {
   // Reply to Tweet
   $connection->post('statuses/update', ['status' => $tweet]);
 
+  // Tweet with Media
+  // $tweet = randomTweet('list_tweet.txt');
+  // $media = $connection->upload('media/upload', ['media' => 'zetbot.jpg']);
+  // $data = [
+  //   'status' => $tweet,
+  //   'media_ids' => $media->media_id_string
+  // ];
+  // $connection->post('statuses/update', $data);
+
   if ($connection->getLastHttpCode() == 200) {
     echo 'Successfully tweet | ' . $tweet;
   } else {
